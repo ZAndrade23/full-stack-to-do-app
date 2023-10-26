@@ -3,7 +3,7 @@ function CharacterList(props){
     return (
 <>
 <h1>Character List:</h1>
-{JSON.stringify(props.characterList)}
+{/* {JSON.stringify(props.characterList)} */}
 <ul>
 {
     props.characterList.map((character) => {
@@ -13,11 +13,7 @@ function CharacterList(props){
         character={character}/>
     })
 }
-{
-    props.characterList.map((character) => (
-        <li key={character.name}>{character.name}</li>
-    ))
-}
+
 
 </ul>
 

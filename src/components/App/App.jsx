@@ -6,7 +6,7 @@ function App () {
   const [characterList, setCharacterList] = useState([]);
 
   const getCharacterList = () => {
-    axios.get('/characters').then((response) => {
+    axios.get('/character').then((response) => {
       console.log(response.data);
       setCharacterList(response.data);
     }).catch((error) => {

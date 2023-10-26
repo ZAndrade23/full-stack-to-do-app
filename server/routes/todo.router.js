@@ -4,7 +4,7 @@ const pool = require('../modules/pool.js');
 
 // GET
 router.get('/', (req, res) => {
-    let sqlText = `SELECT * FROM characters ORDER BY name, origin DESC;`;
+    let sqlText = `SELECT * FROM characters ORDER BY name;`;
     pool.query(sqlText)
     .then((result) => {
         console.log('got stuff back  from the database', result)

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 function CharacterItem(props) {
-        props.getCharacterList();
+        
     
 
 
