@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 import axios from 'axios';
 import CharacterList from '../CharacterList/CharacterList.jsx';
 import CharacterForm from '../CharacterForm/CharacterForm.jsx';
+import Container from '@mui/material/Container';
 
 function App () {
   const [characterList, setCharacterList] = useState([]);
@@ -20,13 +21,13 @@ useEffect(() => {
 },[]);
 
   return (
-    <div>
-      <h1>TO DO APP</h1>
+    <Container maxWidth='xl'>
+      <h1>Anime Character Inventory</h1>
       <CharacterForm getCharacterList={getCharacterList}/>
       <CharacterList
       getCharacterList={getCharacterList}
        characterList={characterList} />
-    </div>
+    </Container>
   );
 
 }

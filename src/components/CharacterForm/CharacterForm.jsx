@@ -1,11 +1,15 @@
 import {useState} from 'react';
 import axios from 'axios';
+import './CharacterForm.css';
+import Paper from '@mui/material/Paper';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 
 function CharacterForm(props) {
     const[name, setName] = useState('');
     const[anime, setAnime] = useState('');
-    const[main, setMain] = useState(' ');
+    const[main, setMain] = useState('');
 
 const sendChararacterToServer = (event) => {
     event.preventDefault();
@@ -30,25 +34,26 @@ props.getCharacterList();
     
     
     return (
-        <>
+        <Paper elevation={3} id="input-form">
         <h2>Submit New Character:</h2>
         <form onSubmit={sendChararacterToServer}>
-            Name: <input value={name} onChange={(e) => setName(e.target.value)}/>
+            Name: <TextField required variant="outlined" type="text" placeholder="Name..." value={name} onChange={(e) => setName(e.target.value)}/>
             <p>{name}</p>
 
 
-            Anime: <input value={anime} onChange={(e) => setAnime(e.target.value)}/>
+            Anime: <TextField required variant="outlined" type="text" placeholder="Anime..." value={anime} onChange={(e) => setAnime(e.target.value)}/>
             <p>{anime}</p>
             
-            Main Character: <input value={main} onChange={(e) => setMain(e.target.value)}/>
+            Main Character: <TextField required variant="outlined" type="text" placeholder="Yes or No..." value={main} onChange={(e) => setMain(e.target.value)}/>
             <p>{main}</p>
-            <button> SEND </button>
+
+            <Button variant="contained"> Add Character </Button>
         </form>
         
 
 
         
-        </>
+        </Paper>
     )};
 
 
