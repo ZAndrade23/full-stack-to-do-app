@@ -19,9 +19,9 @@ router.get('/', (req, res) => {
 router.post('/', (req, res)=>
 {
     const character = req.body;
-    const sqlText = `INSERT INTO characters (name, anime)
-    Values ($1, $2)`;
-    pool.query(sqlText, [character.name, character.anime])
+    const sqlText = `INSERT INTO characters (name, anime, main)
+    Values ($1, $2, $3)`;
+    pool.query(sqlText, [character.name, character.anime, character.main])
     .then((result) => {
         console.log('Added characters to the database', character);
         res.sendStatus(201);
