@@ -23,7 +23,7 @@ axios.post('/character', {
 
     setAnime('');
     setName('');
-    setMain(' ')
+    setMain('')
 props.getCharacterList();
 }).catch((error) => {
     console.error(error);
@@ -37,17 +37,17 @@ props.getCharacterList();
         <Paper elevation={3} id="input-form">
         <h2>Submit New Character:</h2>
         <form onSubmit={sendChararacterToServer}>
-            Name: <TextField required variant="outlined" type="text" placeholder="Name..." value={name} onChange={(e) => setName(e.target.value)}/>
+            Name: <TextField label="required" required variant="outlined" type="text" placeholder="Name..." value={name} onChange={(e) => setName(e.target.value)}/>
             <p>{name}</p>
 
 
-            Anime: <TextField required variant="outlined" type="text" placeholder="Anime..." value={anime} onChange={(e) => setAnime(e.target.value)}/>
+            Anime: <TextField label="required" required variant="outlined" type="text" placeholder="Anime..." value={anime} onChange={(e) => setAnime(e.target.value)}/>
             <p>{anime}</p>
             
-            Main Character: <TextField required variant="outlined" type="text" placeholder="Yes or No..." value={main} onChange={(e) => setMain(e.target.value)}/>
+            Main Character: <TextField label="required" required variant="outlined" type="text" placeholder="Yes or No..." value={main} onChange={(e) => setMain(e.target.value)}/>
             <p>{main}</p>
 
-            <Button variant="contained"> Add Character </Button>
+            <Button type="submit" variant="contained"> SEND </Button>
         </form>
         
 
